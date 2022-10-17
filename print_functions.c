@@ -9,6 +9,7 @@ int print_char(va_list character)
 {
 	int byte_size;
 	char pointer = (char) va_arg(character, int);
+
 	byte_size = _putchar(pointer);
 	return (byte_size);
 }

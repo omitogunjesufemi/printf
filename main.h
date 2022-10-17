@@ -10,7 +10,8 @@
  * @specifier: format conversion specifier
  * @print: the print function for the conversion specifier
  */
-typedef struct specifier {
+typedef struct specifier
+{
 	char *specifier;
 	int (*print)(va_list);
 } conversion_specifier;
@@ -31,14 +32,14 @@ int _putchar(char c);
 
 /**
  * _puts - Print string
- * @S: string
+ * @s: string
  * Return: number of bytes printed
  */
 int _puts(char *s);
 
 /**
  * print_char - Prints character
- * @c: character
+ * @character: character
  * Return: number of bytes printed
  */
 int print_char(va_list character);
@@ -67,4 +68,4 @@ print_function get_print_function(char format_string);
  */
 int _printf(const char *format, ...);
 
-#endif
+#endif /*_MAIN_H_*/

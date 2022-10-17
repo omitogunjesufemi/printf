@@ -15,7 +15,7 @@ print_function get_print_function(char format_string)
 		{"%", print_percent}
 	};
 
-	for (i = 0; i < 2; i++)
+	for (i = 0; i < 3; i++)
 	{
 		if (format_string - options[i].specifier[0] == 0)
 		{

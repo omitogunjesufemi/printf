@@ -35,7 +35,9 @@ int print_string(va_list string)
  */
 int print_percent(va_list character)
 {
+	int byte_size;
+
 	(void) character;
-	int byte_size = _putchar('%');
+	byte_size = _putchar('%');
 	return (byte_size);
 }

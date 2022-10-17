@@ -60,4 +60,11 @@ int print_percent(va_list __attribute__((unused)) character);
 typedef int(*print_function)(va_list);
 print_function get_print_function(char format_string);
 
+/**
+ * _printf - printf
+ * @format: format string
+ * Return: byte size printed
+ */
+int _printf(const char *format, ...);
+
 #endif

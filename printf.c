@@ -11,7 +11,6 @@ int _printf(const char *format, ...)
 	va_list print_obj;
 	int i;
 	unsigned int count;
-	char *fmt;
 	char next;
 
 	count = 0;

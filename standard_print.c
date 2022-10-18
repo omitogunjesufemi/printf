@@ -29,7 +29,7 @@ unsigned int _puts(char *s)
 }
 
 /**
- * _print_int - Prints integer
+ * _put_int - Prints integer
  * @n: integer
  * Return: number of integers printed
  */
@@ -41,7 +41,7 @@ unsigned int _put_int(int n)
 	{
 		num = n;
 		len_digit = int_len(n);
-		multiple = get_multiple(len_digit);
+		multiple = get_multiple(num);
 		if (num < 0)
 		{
 			_putchar('-');

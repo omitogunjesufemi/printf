@@ -12,7 +12,9 @@ print_function get_print_function(char format_string)
 	conversion_specifier options[] = {
 		{"c", print_char},
 		{"s", print_string},
-		{"%", print_percent}
+		{"%", print_percent},
+		{"i", print_int},
+		{"d", print_int}
 	};
 
 	for (i = 0; i < 3; i++)

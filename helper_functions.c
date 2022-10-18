@@ -18,3 +18,23 @@ int check_for_some_chars(char c)
 
 	return (0);
 }
+
+/**
+ * get_multiple - Gets the highest multiple of 10 which is a factor of @n
+ * @num: A positive number
+ *
+ * Return: 1 if @n is <= 10; a multiple of 10 otherwise
+ */
+unsigned int get_multiple(unsigned int num)
+{
+	unsigned int multiple;
+
+	multiple = 1;
+
+	while (multiple * 10 < num)
+	{
+		multiple *= 10;
+	}
+
+	return (multiple);
+}

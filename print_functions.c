@@ -43,7 +43,12 @@ unsigned int print_percent(va_list character)
 	return (byte_size);
 }
 
-unsigned int print_int(va_list integer)
+/**
+ * print_integer - Prints an integer from va_list
+ * @integer: va_list object
+ * Return: size of bytes printed
+ */
+unsigned int print_integer(va_list integer)
 {
 	unsigned int byte_size;
 	int num;

@@ -41,12 +41,14 @@ unsigned int _put_int(int n)
 	{
 		num = n;
 		len_digit = int_len(n);
-		multiple = get_multiple(len_digit);
+
 		if (num < 0)
 		{
 			_putchar('-');
 			num = num * -1;
 		}
+
+		multiple = get_multiple(num);
 
 		for (i = 0; i < len_digit; i++)
 		{

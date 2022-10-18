@@ -13,11 +13,11 @@ print_function get_print_function(char format_string)
 		{"c", print_char},
 		{"s", print_string},
 		{"%", print_percent},
-		{"i", print_int},
-		{"d", print_int}
+		{"d", print_integer},
+		{"i", print_integer}
 	};
 
-	for (i = 0; i < 3; i++)
+	for (i = 0; i < 5; i++)
 	{
 		if (format_string - options[i].specifier[0] == 0)
 		{

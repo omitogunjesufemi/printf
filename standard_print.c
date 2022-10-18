@@ -39,15 +39,15 @@ unsigned int _put_int(int n)
 
 	if (n > 9 || n < 0)
 	{
-		num = n;
 		len_digit = int_len(n);
 
-		if (num < 0)
+		if (n < 0)
 		{
 			_putchar('-');
-			num = num * -1;
+			n = n * (-1);
 		}
 
+		num = n;
 		multiple = get_multiple(num);
 
 		for (i = 0; i < len_digit; i++)

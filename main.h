@@ -28,7 +28,7 @@ int check_for_some_chars(char c);
  * @digit: integer to be checked
  * Return: number of digit present in integer
  */
-unsigned int int_len(unsigned int digit);
+unsigned int int_len(int digit);
 
 /**
  * str_len - Gets length of a string

@@ -24,7 +24,7 @@ int check_for_some_chars(char c)
  * @digit: integer to be checked
  * Return: number of digit present in integer
  */
-unsigned int int_len(unsigned int digit)
+unsigned int int_len(int digit)
 {
 	unsigned int result = 0;
 
@@ -39,8 +39,10 @@ unsigned int int_len(unsigned int digit)
 		result++;
 	}
 	return (result);
+}
 
-/** get_multiple - Gets the highest multiple of 10 which is a factor of @n
+/**
+ * get_multiple - Gets the highest multiple of 10 which is a factor of @n
  * @num: A positive number
  * Return: 1 if @n is <= 10; a multiple of 10 otherwise
  */

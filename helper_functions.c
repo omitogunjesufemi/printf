@@ -52,10 +52,9 @@ unsigned int get_multiple(unsigned int num)
 
 	multiple = 1;
 
-	while (multiple * 10 < num)
+	while (multiple * 10 <= num)
 	{
 		multiple *= 10;
 	}
-
 	return (multiple);
 }

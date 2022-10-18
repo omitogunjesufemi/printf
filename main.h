@@ -17,6 +17,13 @@ typedef struct specifier
 } conversion_specifier;
 
 /**
+ * check_for_some_chars - For some characters after % that should fail
+ * @c: character to check
+ * Return: 1 if it exist, 0 if not
+ */
+int check_for_some_chars(char c);
+
+/**
  * str_len - Gets length of a string
  * @s: string
  * Return: length of string

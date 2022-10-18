@@ -33,6 +33,10 @@ int _printf(const char *format, ...)
 				count = count + print_ptr(print_obj);
 				i = i + 2;
 			}
+			else if (check_for_some_chars(next) == 1)
+			{
+				return (-1);
+			}
 			else
 			{
 				_putchar(format[i]);

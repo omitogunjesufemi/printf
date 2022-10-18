@@ -24,6 +24,13 @@ typedef struct specifier
 int check_for_some_chars(char c);
 
 /**
+ * int_len - This returns the length of an integer
+ * @digit: integer to be checked
+ * Return: number of digit present in integer
+ */
+unsigned int int_len(unsigned int digit);
+
+/**
  * str_len - Gets length of a string
  * @s: string
  * Return: length of string

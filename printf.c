@@ -34,11 +34,9 @@ int _printf(const char *format, ...)
 			}
 			else if (check_for_some_chars(next) == 1)
 				return (-1);
-			else
-			{
-				_putchar(format[i]);
-				count++;
-			}
+
+			_putchar(format[i]);
+			count++;
 		}
 		if (format[i] != '%')
 		{

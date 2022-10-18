@@ -40,8 +40,10 @@ unsigned int str_len(char *s);
 /**
  * get_multiple - Gets the highest multiple of 10 which is a factor
  * of the number provided
+ * @n: the number whose multiple is a factor of
+ * Return: multiple integer
  */
-unsigned int get_multiple(unsigned int);
+unsigned int get_multiple(unsigned int n);
 
 /**
  * _putchar - Print a character

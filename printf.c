@@ -13,8 +13,8 @@ int _printf(const char *format, ...)
 	unsigned int count;
 	char next;
 
-	if (!format)
-		return (-1); /*Error*/
+	if (!format || (format[0] == '%' && format[1] == '\0'))
+		return (-1); /*Printf returns a negative value on Error*/
 
 	count = 0;
 	va_start(print_obj, format);

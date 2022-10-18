@@ -13,6 +13,11 @@ int _printf(const char *format, ...)
 	unsigned int count;
 	char next;
 
+	if(!format)
+	{
+		return (-1); /*Error*/
+	}
+
 	count = 0;
 	va_start(print_obj, format);
 
@@ -31,6 +36,7 @@ int _printf(const char *format, ...)
 			else
 			{
 				_putchar(format[i]);
+				count++;
 			}
 		}
 

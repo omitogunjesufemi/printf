@@ -12,10 +12,12 @@ print_function get_print_function(char format_string)
 	conversion_specifier options[] = {
 		{"c", print_char},
 		{"s", print_string},
-		{"%", print_percent}
+		{"%", print_percent},
+		{"d", print_integer},
+		{"i", print_integer}
 	};
 
-	for (i = 0; i < 3; i++)
+	for (i = 0; i < 5; i++)
 	{
 		if (format_string - options[i].specifier[0] == 0)
 		{

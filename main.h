@@ -28,7 +28,7 @@ int check_for_some_chars(char c);
  * @digit: integer to be checked
  * Return: number of digit present in integer
  */
-unsigned int int_len(unsigned int digit);
+unsigned int int_len(int digit);
 
 /**
  * str_len - Gets length of a string
@@ -84,6 +84,13 @@ unsigned int print_string(va_list string);
  * Return: size of bytes printed
  */
 unsigned int print_percent(va_list __attribute__((unused)) character);
+
+/**
+ * print_integer - prints integer from va_list
+ * @integer: va_list onject
+ * Return: size of bytes printed
+ */
+unsigned int print_integer(va_list integer);
 
 typedef unsigned int(*print_function)(va_list);
 print_function get_print_function(char format_string);

@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 	char next;
 
 	if (!format || (format[0] == '%' && format[1] == '\0'))
-		return (-1);  /* Printf returns a negative value on Error */
+		return (-1);
 
 	count = 0;
 	format_len = str_len((char *) format);

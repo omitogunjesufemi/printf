@@ -31,6 +31,12 @@ int check_for_some_chars(char c);
 unsigned int str_len(char *s);
 
 /**
+ * get_multiple - Gets the highest multiple of 10 which is a factor
+ * of the number provided
+ */
+unsigned int get_multiple(unsigned int);
+
+/**
  * _putchar - Print a character
  * @c: character
  * Return: number of bytes printed

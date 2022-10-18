@@ -5,9 +5,9 @@
  * @character: va_list object
  * Return: size of bytes printed
  */
-int print_char(va_list character)
+unsigned int print_char(va_list character)
 {
-	int byte_size;
+	unsigned int byte_size;
 	char pointer = (char) va_arg(character, int);
 
 	byte_size = _putchar(pointer);
@@ -19,9 +19,9 @@ int print_char(va_list character)
  * @string: va_list object
  * Return: size of bytes printed
  */
-int print_string(va_list string)
+unsigned int print_string(va_list string)
 {
-	int byte_size;
+	unsigned int byte_size;
 	char *pointer;
 
 	pointer = va_arg(string, char *);
@@ -34,9 +34,9 @@ int print_string(va_list string)
  * @character: va_list object
  * Return: size of bytes printed
  */
-int print_percent(va_list character)
+unsigned int print_percent(va_list character)
 {
-	int byte_size;
+	unsigned int byte_size;
 
 	(void) character;
 	byte_size = _putchar('%');

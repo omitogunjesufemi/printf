@@ -13,7 +13,7 @@
 typedef struct specifier
 {
 	char *specifier;
-	int (*print)(va_list);
+	unsigned int (*print)(va_list);
 } conversion_specifier;
 
 /**
@@ -21,44 +21,44 @@ typedef struct specifier
  * @s: string
  * Return: length of string
  */
-int str_len(char *s);
+unsigned int str_len(char *s);
 
 /**
  * _putchar - Print a character
  * @c: character
  * Return: number of bytes printed
  */
-int _putchar(char c);
+unsigned int _putchar(char c);
 
 /**
  * _puts - Print string
  * @s: string
  * Return: number of bytes printed
  */
-int _puts(char *s);
+unsigned int _puts(char *s);
 
 /**
  * print_char - Prints character
  * @character: character
  * Return: number of bytes printed
  */
-int print_char(va_list character);
+unsigned int print_char(va_list character);
 
 /**
  * print_string - prints the string from va_list
  * @string: va_list object
  * Return: size of bytes printed
  */
-int print_string(va_list string);
+unsigned int print_string(va_list string);
 
 /**
  * print_percent - prints percent from va_list
  * @character: va_list object
  * Return: size of bytes printed
  */
-int print_percent(va_list __attribute__((unused)) character);
+unsigned int print_percent(va_list __attribute__((unused)) character);
 
-typedef int(*print_function)(va_list);
+typedef unsigned int(*print_function)(va_list);
 print_function get_print_function(char format_string);
 
 /**

@@ -9,17 +9,15 @@ int _printf(const char *format, ...)
 {
 	print_function print_ptr;
 	va_list print_obj;
-	unsigned int i;
-	unsigned int count;
-	unsigned int format_len;
+	unsigned int count, i, format_len;
 	char next;
 
 	if (!format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
+	va_start(print_obj, format);
 	count = 0;
 	format_len = str_len((char *) format);
-	va_start(print_obj, format);
 
 	for (i = 0; i < format_len; i++)
 	{

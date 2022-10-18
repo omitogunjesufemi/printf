@@ -42,3 +42,13 @@ unsigned int print_percent(va_list character)
 	byte_size = _putchar('%');
 	return (byte_size);
 }
+
+unsigned int print_int(va_list integer)
+{
+	unsigned int byte_size;
+	int num;
+
+	num = (int) va_arg(integer, int);
+	byte_size = _put_int(num);
+	return (byte_size);
+}

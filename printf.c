@@ -29,7 +29,8 @@ int _printf(const char *format, ...)
 			if (print_ptr)
 			{
 				count = count + print_ptr(print_obj);
-				i = i + 2;
+				i = i + 1;
+				continue;
 			}
 			else if (check_for_some_chars(next) == 1)
 				return (-1);

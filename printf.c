@@ -14,11 +14,8 @@ int _printf(const char *format, ...)
 	unsigned int format_len;
 	char next;
 
-	/**
-	 * Printf returns a negative value on Error
-	 */
 	if (!format || (format[0] == '%' && format[1] == '\0'))
-		return (-1);
+		return (-1);  /* Printf returns a negative value on Error */
 
 	count = 0;
 	format_len = str_len((char *) format);
@@ -49,6 +46,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(print_obj);
-
 	return (count);
 }

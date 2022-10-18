@@ -33,13 +33,13 @@ unsigned int _puts(char *s)
  * @n: integer
  * Return: number of integers printed
  */
-int _print_int(int n)
+unsigned int _put_int(int n)
 {
 	unsigned int len_digit, multiple, num, i, digit;
 
-	num = n;
-	if (num > 9 || num < 0)
+	if (n > 9 || n < 0)
 	{
+		num = n;
 		len_digit = int_len(n);
 		multiple = get_multiple(len_digit);
 		if (num < 0)
@@ -51,12 +51,17 @@ int _print_int(int n)
 		for (i = 0; i < len_digit; i++)
 		{
 			digit = (num / multiple) % 10;
-			_putchar(num + '0');
+			_putchar(digit + '0');
 			multiple = multiple / 10;
 		}
+
+		return (len_digit);
 	}
 	else
 	{
-		_putchar(num + '0');
+		_putchar(n + '0');
+		return (1);
 	}
+
+	return (0);
 }

@@ -52,6 +52,13 @@ unsigned int _putchar(char c);
 unsigned int _puts(char *s);
 
 /**
+ * _put_int - Prints integer
+ * @n: integer
+ * Return: number of integers printed
+ */
+unsigned int _put_int(int n);
+
+/**
  * print_char - Prints character
  * @character: character
  * Return: number of bytes printed

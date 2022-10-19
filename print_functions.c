@@ -25,6 +25,13 @@ unsigned int print_string(va_list string)
 	char *pointer;
 
 	pointer = va_arg(string, char *);
+
+	if (pointer == NULL)
+	{
+		byte_size = _puts("(null)");
+		return (byte_size);
+	}
+
 	byte_size = _puts(pointer);
 	return (byte_size);
 }

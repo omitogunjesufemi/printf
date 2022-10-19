@@ -14,7 +14,8 @@ print_function get_print_function(char format_string)
 		{"s", print_string},
 		{"%", print_percent},
 		{"d", print_integer},
-		{"i", print_integer}
+		{"i", print_integer},
+		{"b", print_binary}
 	};
 
 	for (i = 0; i < 5; i++)

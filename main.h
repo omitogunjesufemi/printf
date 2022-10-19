@@ -97,6 +97,16 @@ unsigned int decimal_to_nbase_print(unsigned int num, int nbase);
 unsigned int print_char(va_list character);
 
 /**
+ * get_remainder - gets the remainder of a base division
+ * @num: The number to be divided
+ * @nbase: The base to be used in the division
+ * @hex_flag: Differentiates lowercase(1) and UPPERCASE(2) hex values
+ *
+ * Return: char value of remainder
+ */
+char get_remainder(unsigned int num, int nbase, int hex_flag);
+
+/**
  * print_string - prints the string from va_list
  * @string: va_list object
  * Return: size of bytes printed

@@ -78,3 +78,31 @@ int get_remainder_count(unsigned int num)
 
 	return (count);
 }
+
+/**
+ * get_remainder - divides numbers and returns the remainder as char
+ * @num: The number to be divided
+ * @nbase: The base to used in the division
+ * hex_flag: Differentiates small(1) and capital(2) letter hex values
+ *
+ * Return: The char value of the remainder
+ */
+char get_remainder(unsigned int num, int nbase, int hex_flag)
+{
+	int remainder;
+	char remainder_char;
+
+	remainder = num % nbase;
+	
+	if (remainder < 10)
+		remainder_char = remainder + 48; /*Use ascii value*/
+	else
+	{
+		if (hex_flag == 1)
+			remainder_char = remainder + 87;
+		else if (hex_flag == 2)
+			remainder_char = remainder + 55;
+	}
+
+	return (remainder_char);
+}

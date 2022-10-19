@@ -26,17 +26,17 @@ unsigned int str_len(char *s)
 void reverse_string(char *s)
 {
 	int len, i;
-	char temp;
+	int temp;
 
 	len = 0;
-	i = 0;
 
 	while (s[len] != '\0')
 	{
 		len++;
 	}
 
-	while (i < len)
+	i = 0;
+	while (i < (len / 2))
 	{
 		temp = s[i];
 		s[i] = s[len - i - 1];

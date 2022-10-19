@@ -82,6 +82,12 @@ unsigned int dec_to_binary_print(unsigned int num)
 	char remainder_char;
 	unsigned int print_size;
 
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
 	i = 0;
 	remainder_count = get_remainder_count(num);
 	ptr_remainder = malloc((1 + remainder_count) * sizeof(char));

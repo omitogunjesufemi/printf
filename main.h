@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <stdio.h>
 
 /**
  * struct specifier - Struct specifier
@@ -122,6 +123,14 @@ unsigned int print_integer(va_list integer);
  * Return: size of bytes printed
  */
 unsigned int print_binary(va_list binary);
+
+/**
+ * print_octal - Prints octal from unsigned int in va_list
+ * @octal: va_list object holding unsigned int
+ * Return: size of bytes printed
+ */
+unsigned int print_octal(va_list octal);
+
 
 typedef unsigned int(*print_function)(va_list);
 print_function get_print_function(char format_string);

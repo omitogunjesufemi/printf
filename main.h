@@ -100,9 +100,11 @@ unsigned int _put_uint(unsigned int n);
 /**
  * decimal_to_nbase_print - This converts a decimal number to binary, then prints
  * @num: decimal number
+ * @nbase: The number base to convert to
+ * @hex_flag: 0 default, 1 for UPPERCASE hex values
  * Return: byte size printed
  */
-unsigned int decimal_to_nbase_print(unsigned int num, int nbase);
+unsigned int decimal_to_nbase_print(unsigned int num, int nbase, int hex_flag);
 
 /**
  * print_char - Prints character
@@ -110,6 +112,16 @@ unsigned int decimal_to_nbase_print(unsigned int num, int nbase);
  * Return: number of bytes printed
  */
 unsigned int print_char(va_list character);
+
+/**
+ * get_remainder - gets the remainder of a base division
+ * @num: The number to be divided
+ * @nbase: The base to be used in the division
+ * @hex_flag: Differentiates lowercase(1) and UPPERCASE(2) hex values
+ *
+ * Return: char value of remainder
+ */
+char get_remainder(unsigned int num, int nbase, int hex_flag);
 
 /**
  * print_string - prints the string from va_list
@@ -153,6 +165,19 @@ unsigned int print_uinteger(va_list integer);
  */
 unsigned int print_octal(va_list octal);
 
+/**
+ * print_lowercase_hex - Prints a lowercase hex from int in va_list
+ * @hex: va_list object holding unsigned int
+ * Return: size of bytes printed
+ */
+unsigned int print_lowercase_hex(va_list hex);
+
+/**
+ * print_uppercase_hex - Prints a lowercase hex from int in va_list
+ * @hex: va_list object holding unsigned int
+ * Return: size of bytes printed
+ */
+unsigned int print_uppercase_hex(va_list hex);
 
 typedef unsigned int(*print_function)(va_list);
 print_function get_print_function(char format_string);

@@ -108,11 +108,13 @@ unsigned int _put_uint(unsigned int n)
 /**
  * decimal_to_nbase_print - This converts a decimal number to binary, then prints
  * @num: decimal number
+ * @nbase: The base to convert to
+ * @hex_flag: 0 default, 1 for UPPERCASE hex values
  * Return: byte size printed
  */
-unsigned int decimal_to_nbase_print(unsigned int num, int nbase)
+unsigned int decimal_to_nbase_print(unsigned int num, int nbase, int hex_flag)
 {
-	int remainder, remainder_count, i;
+	int remainder_count, i;
 	char *ptr_remainder;
 	char remainder_char;
 	unsigned int print_size;
@@ -132,9 +134,9 @@ unsigned int decimal_to_nbase_print(unsigned int num, int nbase)
 
 	while (num != 0)
 	{
-		remainder = num % nbase;
+		remainder_char = get_remainder(num, nbase, hex_flag);
 		num = num / nbase;
-		remainder_char = (remainder + '0'); /*converting remainder to char*/
+
 		ptr_remainder[i] = remainder_char;
 		i++;
 	}

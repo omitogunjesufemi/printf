@@ -31,11 +31,26 @@ int check_for_some_chars(char c);
 unsigned int int_len(int digit);
 
 /**
+ * get_remainder_count - Gets the count of remainder
+ * for decimal to binary conversion
+ * @num: the decimal number
+ * Return: remainder count
+ */
+int get_remainder_count(unsigned int num);
+
+/**
  * str_len - Gets length of a string
  * @s: string
  * Return: length of string
  */
 unsigned int str_len(char *s);
+
+/*
+ * reverse_string - Reverses a string
+ * @s: The pointer to the string to be reversed
+ * Return: void
+ */
+void reverse_string(char *s);
 
 /**
  * get_multiple - Gets the highest multiple of 10 which is a factor
@@ -67,6 +82,13 @@ unsigned int _puts(char *s);
 unsigned int _put_int(int n);
 
 /**
+ * dec_to_binary_print - This converts a decimal number to binary, then prints
+ * @num: decimal number
+ * Return: byte size printed
+ */
+unsigned int dec_to_binary_print(unsigned int num);
+
+/**
  * print_char - Prints character
  * @character: character
  * Return: number of bytes printed
@@ -93,6 +115,13 @@ unsigned int print_percent(va_list __attribute__((unused)) character);
  * Return: size of bytes printed
  */
 unsigned int print_integer(va_list integer);
+
+/**
+ * print_binary - Prints binary from unsigned int in va_list
+ * @binary: va_list object holding unsigned int
+ * Return: size of bytes printed
+ */
+unsigned int print_binary(va_list binary);
 
 typedef unsigned int(*print_function)(va_list);
 print_function get_print_function(char format_string);

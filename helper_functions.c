@@ -58,3 +58,23 @@ unsigned int get_multiple(unsigned int num)
 	}
 	return ((unsigned int) multiple);
 }
+
+/**
+ * get_remainder_count - Gets the count of remainder
+ * for decimal to binary conversion
+ * @num: the decimal number
+ * Return: remainder count
+ */
+int get_remainder_count(unsigned int num)
+{
+	int count;
+
+	count = 0;
+	while (num != 0)
+	{
+		num = num / 2;
+		count++;
+	}
+
+	return (count);
+}

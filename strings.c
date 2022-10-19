@@ -17,3 +17,30 @@ unsigned int str_len(char *s)
 
 	return (i);
 }
+
+/**
+ * reverse_str - Reverses a string
+ * @s: The string to reverse
+ * Return: Nothing
+ */
+void reverse_string(char *s)
+{
+	int len, i;
+	int temp;
+
+	len = 0;
+
+	while (s[len] != '\0')
+	{
+		len++;
+	}
+
+	i = 0;
+	while (i < (len / 2))
+	{
+		temp = s[i];
+		s[i] = s[len - i - 1];
+		s[len - i - 1] = temp;
+		i++;
+	}
+}

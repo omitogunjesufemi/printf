@@ -16,10 +16,12 @@ print_function get_print_function(char format_string)
 		{"d", print_integer},
 		{"i", print_integer},
 		{"b", print_binary},
-		{"o", print_octal}
+		{"o", print_octal},
+		{"x", print_lowercase_hex},
+		{"X", print_uppercase_hex}
 	};
 
-	for (i = 0; i < 7; i++)
+	for (i = 0; i < 9; i++)
 	{
 		if (format_string - options[i].specifier[0] == 0)
 		{

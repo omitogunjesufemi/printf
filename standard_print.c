@@ -99,10 +99,9 @@ unsigned int decimal_to_nbase_print(unsigned int num, int nbase, int hex_flag)
 
 	while (num != 0)
 	{
-		/*remainder = num % nbase;*/
 		remainder_char = get_remainder(num, nbase, hex_flag);
 		num = num / nbase;
-		/*remainder_char = (remainder + '0');*/
+
 		ptr_remainder[i] = remainder_char;
 		i++;
 	}

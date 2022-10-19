@@ -143,6 +143,19 @@ unsigned int print_binary(va_list binary);
  */
 unsigned int print_octal(va_list octal);
 
+/**
+ * print_lowercase_hex - Prints a lowercase hex from int in va_list
+ * @hex: va_list object holding unsigned int
+ * Return: size of bytes printed
+ */
+unsigned int print_lowercase_hex(va_list hex);
+
+/**
+ * print_uppercase_hex - Prints a lowercase hex from int in va_list
+ * @hex: va_list object holding unsigned int
+ * Return: size of bytes printed
+ */
+unsigned int print_uppercase_hex(va_list hex);
 
 typedef unsigned int(*print_function)(va_list);
 print_function get_print_function(char format_string);

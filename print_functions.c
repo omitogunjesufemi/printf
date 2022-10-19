@@ -75,7 +75,7 @@ unsigned int print_binary(va_list binary)
 	unsigned int byte_size, num;
 
 	num = va_arg(binary, unsigned int);
-	byte_size = decimal_to_nbase_print(num, 2);
+	byte_size = decimal_to_nbase_print(num, 2, 0);
 	return (byte_size);
 }
 
@@ -89,6 +89,34 @@ unsigned int print_octal(va_list octal)
 	unsigned int byte_size, num;
 
 	num = va_arg(octal, unsigned int);
-	byte_size = decimal_to_nbase_print(num, 8);
+	byte_size = decimal_to_nbase_print(num, 8, 0);
+	return (byte_size);
+}
+
+/**
+ * print_lowercase_hex - prints a hexadecimal from va_list
+ * @hex: A decimal number as va_list object
+ * Return: size of bytes printed
+ */
+unsigned int print_lowercase_hex(va_list hex)
+{
+	unsigned int byte_size, num;
+
+	num = va_arg(hex, unsigned int);
+	byte_size = decimal_to_nbase_print(num, 16, 0);
+	return (byte_size);
+}
+
+/**
+ * print_uppercase_hex - Prints a hexadecimal from va_list
+ * @hex: A hexadecimal number as va_list object
+ * Return: size of bytes printed
+ */
+unsigned int print_uppercase_hex(va_list hex)
+{
+	unsigned int byte_size, num;
+
+	num = va_arg(hex, unsigned int);
+	byte_size = decimal_to_nbase_print(num, 16, 1);
 	return (byte_size);
 }

@@ -62,6 +62,14 @@ unsigned int str_len(char *s);
 void reverse_string(char *s);
 
 /**
+ * print_string_special_chars - Prints a string that contains
+ * unprintable special chars
+ * @str: The string to print
+ * Return: The number of bytes printed
+ */
+unsigned int print_string_special_chars(char *str);
+
+/**
  * get_multiple - Gets the highest multiple of 10 which is a factor
  * of the number provided
  * @n: the number whose multiple is a factor of
@@ -98,7 +106,8 @@ unsigned int _put_int(int n);
 unsigned int _put_uint(unsigned int n);
 
 /**
- * decimal_to_nbase_print - This converts a decimal number to binary, then prints
+ * decimal_to_nbase_print - This converts a decimal number to
+ * binary, then prints
  * @num: decimal number
  * @nbase: The number base to convert to
  * @hex_flag: 0 default, 1 for UPPERCASE hex values
@@ -178,6 +187,13 @@ unsigned int print_lowercase_hex(va_list hex);
  * Return: size of bytes printed
  */
 unsigned int print_uppercase_hex(va_list hex);
+
+/**
+ * print_special_char - Prints the hexadecimal for a special character
+ * @special_character: the special character va_list object
+ * Return: size of bytes printed
+ */
+unsigned int print_special_char(va_list special_character);
 
 typedef unsigned int(*print_function)(va_list);
 print_function get_print_function(char format_string);

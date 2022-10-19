@@ -19,10 +19,11 @@ print_function get_print_function(char format_string)
 		{"u", print_uinteger},
 		{"o", print_octal},
 		{"x", print_lowercase_hex},
-		{"X", print_uppercase_hex}
+		{"X", print_uppercase_hex},
+		{"S", print_special_char}
 	};
 
-	for (i = 0; i < 10; i++)
+	for (i = 0; i < 11; i++)
 	{
 		if (format_string - options[i].specifier[0] == 0)
 		{

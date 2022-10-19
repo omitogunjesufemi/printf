@@ -136,3 +136,18 @@ unsigned int print_uppercase_hex(va_list hex)
 	byte_size = decimal_to_nbase_print(num, 16, 1);
 	return (byte_size);
 }
+
+/**
+ * print_special_char - Prints the hexadecimal for a special character
+ * @special_character: the special character va_list object
+ * Return: size of bytes printed
+ */
+unsigned int print_special_char(va_list special_character)
+{
+	unsigned int byte_size;
+	char *special_str;
+
+	special_str = va_arg(special_character, char *);
+	byte_size = print_string_special_chars(special_str);
+	return (byte_size);
+}

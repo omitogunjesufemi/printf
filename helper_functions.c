@@ -48,7 +48,7 @@ unsigned int int_len(int digit)
  */
 unsigned int get_multiple(unsigned int num)
 {
-	unsigned int multiple;
+	long int multiple;
 
 	multiple = 1;
 
@@ -56,5 +56,5 @@ unsigned int get_multiple(unsigned int num)
 	{
 		multiple *= 10;
 	}
-	return (multiple);
+	return ((unsigned int) multiple);
 }

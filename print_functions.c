@@ -60,7 +60,7 @@ unsigned int print_integer(va_list integer)
 	unsigned int byte_size;
 	int num;
 
-	num = (int) va_arg(integer, int);
+	num = va_arg(integer, int);
 	byte_size = _put_int(num);
 	return (byte_size);
 }

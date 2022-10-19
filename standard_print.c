@@ -71,11 +71,11 @@ unsigned int _put_int(int n)
 }
 
 /**
- * dec_to_binary_print - This converts a decimal number to binary, then prints
+ * decimal_to_nbase_print - This converts a decimal number to binary, then prints
  * @num: decimal number
  * Return: byte size printed
  */
-unsigned int dec_to_binary_print(unsigned int num)
+unsigned int decimal_to_nbase_print(unsigned int num, int nbase)
 {
 	int remainder, remainder_count, i;
 	char *ptr_remainder;
@@ -97,8 +97,8 @@ unsigned int dec_to_binary_print(unsigned int num)
 
 	while (num != 0)
 	{
-		remainder = num % 2;
-		num = num / 2;
+		remainder = num % nbase;
+		num = num / nbase;
 		remainder_char = (remainder + '0'); /*converting remainder to char*/
 		ptr_remainder[i] = remainder_char;
 		i++;

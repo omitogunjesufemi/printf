@@ -45,7 +45,7 @@ int get_remainder_count(unsigned int num);
  */
 unsigned int str_len(char *s);
 
-/*
+/**
  * reverse_string - Reverses a string
  * @s: The pointer to the string to be reversed
  * Return: void
@@ -82,11 +82,11 @@ unsigned int _puts(char *s);
 unsigned int _put_int(int n);
 
 /**
- * dec_to_binary_print - This converts a decimal number to binary, then prints
+ * decimal_to_nbase_print - This converts a decimal number to binary, then prints
  * @num: decimal number
  * Return: byte size printed
  */
-unsigned int dec_to_binary_print(unsigned int num);
+unsigned int decimal_to_nbase_print(unsigned int num, int nbase);
 
 /**
  * print_char - Prints character

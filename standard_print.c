@@ -69,3 +69,36 @@ unsigned int _put_int(int n)
 
 	return (0);
 }
+
+/**
+ * dec_to_binary_print - This converts a decimal number to binary, then prints
+ * @num: decimal number
+ * Return: byte size printed
+ */
+unsigned int dec_to_binary_print(unsigned int num)
+{
+	int remainder, remainder_count, i;
+	char *ptr_remainder;
+	char remainder_char;
+	unsigned int print_size;
+
+	i = 0;
+	remainder_count = get_remainder_count(num);
+	ptr_remainder = malloc((1 + remainder_count) * sizeof(char));
+
+	while (num != 0)
+	{
+		remainder = num % 2;
+		num = num / 2;
+		remainder_char = (remainder + '0'); /*converting remainder to char*/
+		ptr_remainder[i] = remainder_char;
+		i++;
+	}
+
+	ptr_remainder[i] = '\0';
+	reverse_string(ptr_remainder);
+	print_size = _puts(ptr_remainder);
+	free(ptr_remainder);
+
+	return (print_size);
+}

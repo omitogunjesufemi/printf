@@ -75,7 +75,7 @@ unsigned int print_binary(va_list binary)
 	unsigned int byte_size, num;
 
 	num = va_arg(binary, unsigned int);
-	byte_size = dec_to_binary_print(num, 2);
+	byte_size = decimal_to_nbase_print(num, 2);
 	return (byte_size);
 }
 
@@ -89,6 +89,6 @@ unsigned int print_octal(va_list octal)
 	unsigned int byte_size, num;
 
 	num = va_arg(octal, unsigned int);
-	byte_size = dec_to_binary_print(num, 8);
+	byte_size = decimal_to_nbase_print(num, 8);
 	return (byte_size);
 }

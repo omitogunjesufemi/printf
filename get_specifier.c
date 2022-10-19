@@ -19,7 +19,7 @@ print_function get_print_function(char format_string)
 		{"o", print_octal}
 	};
 
-	for (i = 0; i < 6; i++)
+	for (i = 0; i < 7; i++)
 	{
 		if (format_string - options[i].specifier[0] == 0)
 		{

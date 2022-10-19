@@ -15,7 +15,8 @@ print_function get_print_function(char format_string)
 		{"%", print_percent},
 		{"d", print_integer},
 		{"i", print_integer},
-		{"b", print_binary}
+		{"b", print_binary},
+		{"o", print_octal}
 	};
 
 	for (i = 0; i < 6; i++)

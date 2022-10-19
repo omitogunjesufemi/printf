@@ -20,7 +20,7 @@ unsigned int str_len(char *s)
 
 /**
  * reverse_str - Reverses a string
- * @str: The string to reverse
+ * @s: The string to reverse
  * Return: Nothing
  */
 void reverse_string(char *s)

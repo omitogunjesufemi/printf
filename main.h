@@ -37,6 +37,13 @@ unsigned int int_len(int digit);
  */
 unsigned int str_len(char *s);
 
+/*
+ * reverse_string - Reverses a string
+ * @s: The pointer to the string to be reversed
+ * Return: void
+ */
+void reverse_string(char *s);
+
 /**
  * get_multiple - Gets the highest multiple of 10 which is a factor
  * of the number provided
@@ -93,6 +100,13 @@ unsigned int print_percent(va_list __attribute__((unused)) character);
  * Return: size of bytes printed
  */
 unsigned int print_integer(va_list integer);
+
+/**
+ * print_binary - Prints binary from unsigned int in va_list
+ * @binary: va_list object holding unsigned int
+ * Return: size of bytes printed
+ */
+unsigned int print_binary(va_list binary);
 
 typedef unsigned int(*print_function)(va_list);
 print_function get_print_function(char format_string);

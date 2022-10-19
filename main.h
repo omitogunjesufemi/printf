@@ -4,6 +4,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <stdio.h>
+#include <limits.h>
 
 /**
  * struct specifier - Struct specifier
@@ -31,6 +33,13 @@ int check_for_some_chars(char c);
 unsigned int int_len(int digit);
 
 /**
+ * uint_len - This returns the length of an unsigned integer
+ * @digit: integer to be checked
+ * Return: number of digit present in integer
+ */
+unsigned int uint_len(unsigned int digit);
+
+/**
  * get_remainder_count - Gets the count of remainder
  * for decimal to binary conversion
  * @num: the decimal number
@@ -45,7 +54,7 @@ int get_remainder_count(unsigned int num);
  */
 unsigned int str_len(char *s);
 
-/*
+/**
  * reverse_string - Reverses a string
  * @s: The pointer to the string to be reversed
  * Return: void
@@ -82,11 +91,20 @@ unsigned int _puts(char *s);
 unsigned int _put_int(int n);
 
 /**
- * dec_to_binary_print - This converts a decimal number to binary, then prints
+ * _put_uint - Prints unsigned integer
+ * @n: integer
+ * Return: number of integers printed
+ */
+unsigned int _put_uint(unsigned int n);
+
+/**
+ * decimal_to_nbase_print - This converts a decimal number to binary, then prints
  * @num: decimal number
+ * @nbase: The number base to convert to
+ * @hex_flag: 0 default, 1 for UPPERCASE hex values
  * Return: byte size printed
  */
-unsigned int dec_to_binary_print(unsigned int num);
+unsigned int decimal_to_nbase_print(unsigned int num, int nbase, int hex_flag);
 
 /**
  * print_char - Prints character
@@ -94,6 +112,16 @@ unsigned int dec_to_binary_print(unsigned int num);
  * Return: number of bytes printed
  */
 unsigned int print_char(va_list character);
+
+/**
+ * get_remainder - gets the remainder of a base division
+ * @num: The number to be divided
+ * @nbase: The base to be used in the division
+ * @hex_flag: Differentiates lowercase(1) and UPPERCASE(2) hex values
+ *
+ * Return: char value of remainder
+ */
+char get_remainder(unsigned int num, int nbase, int hex_flag);
 
 /**
  * print_string - prints the string from va_list
@@ -122,6 +150,34 @@ unsigned int print_integer(va_list integer);
  * Return: size of bytes printed
  */
 unsigned int print_binary(va_list binary);
+
+/**
+ * print_uinteger - Prints an unsigned integer from va_list
+ * @integer: va_list object
+ * Return: size of bytes printed
+ */
+unsigned int print_uinteger(va_list integer);
+
+/**
+ * print_octal - Prints octal from unsigned int in va_list
+ * @octal: va_list object holding unsigned int
+ * Return: size of bytes printed
+ */
+unsigned int print_octal(va_list octal);
+
+/**
+ * print_lowercase_hex - Prints a lowercase hex from int in va_list
+ * @hex: va_list object holding unsigned int
+ * Return: size of bytes printed
+ */
+unsigned int print_lowercase_hex(va_list hex);
+
+/**
+ * print_uppercase_hex - Prints a lowercase hex from int in va_list
+ * @hex: va_list object holding unsigned int
+ * Return: size of bytes printed
+ */
+unsigned int print_uppercase_hex(va_list hex);
 
 typedef unsigned int(*print_function)(va_list);
 print_function get_print_function(char format_string);

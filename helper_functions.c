@@ -42,6 +42,23 @@ unsigned int int_len(int digit)
 }
 
 /**
+ * uint_len - This returns the length of an unsigned integer
+ * @digit: integer to be checked
+ * Return: number of digit present in integer
+ */
+unsigned int uint_len(unsigned int digit)
+{
+	unsigned int result = 0;
+
+	while (digit != 0)
+	{
+		digit = digit / 10;
+		result++;
+	}
+	return (result);
+}
+
+/**
  * get_multiple - Gets the highest multiple of 10 which is a factor of @n
  * @num: A positive number
  * Return: 1 if @n is <= 10; a multiple of 10 otherwise
@@ -77,4 +94,32 @@ int get_remainder_count(unsigned int num)
 	}
 
 	return (count);
+}
+
+/**
+ * get_remainder - divides numbers and returns the remainder as char
+ * @num: The number to be divided
+ * @nbase: The base to used in the division
+ * hex_flag: 0 Default, 1 for UPPERCASE hex values 
+ *
+ * Return: The char value of the remainder
+ */
+char get_remainder(unsigned int num, int nbase, int hex_flag)
+{
+	int remainder;
+	char remainder_char;
+
+	remainder = num % nbase;
+	
+	if (remainder < 10)
+		remainder_char = remainder + 48; /*Use ascii value*/
+	else
+	{
+		if (hex_flag == 0)
+			remainder_char = remainder + 87;
+		else if (hex_flag == 1)
+			remainder_char = remainder + 55;
+	}
+
+	return (remainder_char);
 }

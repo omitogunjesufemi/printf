@@ -70,14 +70,51 @@ unsigned int _put_int(int n)
 	return (0);
 }
 
+
 /**
- * dec_to_binary_print - This converts a decimal number to binary, then prints
+ * _put_uint - Prints unsigned integer
+ * @n: integer
+ * Return: number of integers printed
+ */
+unsigned int _put_uint(unsigned int n)
+{
+	unsigned int len_digit, multiple, num, i, digit, count;
+
+	if (n > 9)
+	{
+		count = 0;
+		len_digit = uint_len(n);
+		num = n;
+		multiple = get_multiple(num);
+
+		for (i = 0; i < len_digit; i++)
+		{
+			digit = (num / multiple) % 10;
+			_putchar(digit + '0');
+			multiple = multiple / 10;
+		}
+
+		return (count + len_digit);
+	}
+	else
+	{
+		_putchar(n + '0');
+		return (1);
+	}
+
+	return (0);
+}
+
+/**
+ * decimal_to_nbase_print - This converts a decimal number to binary, then prints
  * @num: decimal number
+ * @nbase: The base to convert to
+ * @hex_flag: 0 default, 1 for UPPERCASE hex values
  * Return: byte size printed
  */
-unsigned int dec_to_binary_print(unsigned int num)
+unsigned int decimal_to_nbase_print(unsigned int num, int nbase, int hex_flag)
 {
-	int remainder, remainder_count, i;
+	int remainder_count, i;
 	char *ptr_remainder;
 	char remainder_char;
 	unsigned int print_size;
@@ -97,9 +134,9 @@ unsigned int dec_to_binary_print(unsigned int num)
 
 	while (num != 0)
 	{
-		remainder = num % 2;
-		num = num / 2;
-		remainder_char = (remainder + '0'); /*converting remainder to char*/
+		remainder_char = get_remainder(num, nbase, hex_flag);
+		num = num / nbase;
+
 		ptr_remainder[i] = remainder_char;
 		i++;
 	}

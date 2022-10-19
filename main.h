@@ -179,6 +179,13 @@ unsigned int print_lowercase_hex(va_list hex);
  */
 unsigned int print_uppercase_hex(va_list hex);
 
+/**
+ * print_special_char - Prints the hexadecimal for a special character
+ * @special_character: the special character va_list object
+ * Return: size of bytes printed
+ */
+unsigned int print_special_char(va_list special_character);
+
 typedef unsigned int(*print_function)(va_list);
 print_function get_print_function(char format_string);
 

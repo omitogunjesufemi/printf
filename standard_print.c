@@ -92,6 +92,9 @@ unsigned int dec_to_binary_print(unsigned int num)
 	remainder_count = get_remainder_count(num);
 	ptr_remainder = malloc((1 + remainder_count) * sizeof(char));
 
+	if (ptr_remainder == NULL)
+		return (-1);
+
 	while (num != 0)
 	{
 		remainder = num % 2;

@@ -31,6 +31,14 @@ int check_for_some_chars(char c);
 unsigned int int_len(int digit);
 
 /**
+ * get_remainder_count - Gets the count of remainder
+ * for decimal to binary conversion
+ * @num: the decimal number
+ * Return: remainder count
+ */
+int get_remainder_count(unsigned int num);
+
+/**
  * str_len - Gets length of a string
  * @s: string
  * Return: length of string
@@ -72,6 +80,13 @@ unsigned int _puts(char *s);
  * Return: number of integers printed
  */
 unsigned int _put_int(int n);
+
+/**
+ * dec_to_binary_print - This converts a decimal number to binary, then prints
+ * @num: decimal number
+ * Return: byte size printed
+ */
+unsigned int dec_to_binary_print(unsigned int num);
 
 /**
  * print_char - Prints character

@@ -144,11 +144,10 @@ unsigned int print_uppercase_hex(va_list hex)
  */
 unsigned int print_special_char(va_list special_character)
 {
-	unsigned int byte_size, special_char;
+	unsigned int byte_size;
+	char *special_str;
 
-	special_char = va_arg(special_character, char);
-	/**
-	 * TODO
-	 */
+	special_str = va_arg(special_character, char *);
+	byte_size = print_string_special_chars(special_str);
 	return (byte_size);
 }

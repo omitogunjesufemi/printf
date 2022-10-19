@@ -100,7 +100,7 @@ int get_remainder_count(unsigned int num)
  * get_remainder - divides numbers and returns the remainder as char
  * @num: The number to be divided
  * @nbase: The base to used in the division
- * hex_flag: 0 Default, 1 for UPPERCASE hex values 
+ * hex_flag: 0 Default, 1 for UPPERCASE hex values
  *
  * Return: The char value of the remainder
  */
@@ -110,7 +110,7 @@ char get_remainder(unsigned int num, int nbase, int hex_flag)
 	char remainder_char;
 
 	remainder = num % nbase;
-	
+
 	if (remainder < 10)
 		remainder_char = remainder + 48; /*Use ascii value*/
 	else
@@ -122,4 +122,36 @@ char get_remainder(unsigned int num, int nbase, int hex_flag)
 	}
 
 	return (remainder_char);
+}
+
+/**
+ * print_string_special_chars - Prints a string that contains unprintable
+ * special chars
+ * @str: The string to print
+ * Return: The number of bytes printed
+ */
+unsigned int print_string_special_chars(char *str)
+{
+	unsigned int i, count;
+
+	i = 0;
+	count = 0;
+	while (str[i] != '\0')
+	{
+		if ((str[i] < 32) || (str[i] >= 127))
+		{
+			count += _putchar(92);
+			count += _putchar(120);
+
+			if (str[i] < 16)
+				count += _putchar(48);
+			count += decimal_to_nbase_print(str[i], 16, 1);
+		}
+		else
+		{
+			count += _putchar(str[i]);
+		}
+		i++;
+	}
+	return (count);
 }

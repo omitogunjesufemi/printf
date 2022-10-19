@@ -106,7 +106,8 @@ unsigned int _put_uint(unsigned int n)
 }
 
 /**
- * decimal_to_nbase_print - This converts a decimal number to binary, then prints
+ * decimal_to_nbase_print - This converts a decimal number to binary,
+ * then prints
  * @num: decimal number
  * @nbase: The base to convert to
  * @hex_flag: 0 default, 1 for UPPERCASE hex values

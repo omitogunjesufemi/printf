@@ -35,16 +35,18 @@ unsigned int _puts(char *s)
  */
 unsigned int _put_int(int n)
 {
-	unsigned int len_digit, multiple, num, i, digit;
+	unsigned int len_digit, multiple, num, i, digit, count;
 
 	if (n > 9 || n < 0)
 	{
+		count = 0;
 		len_digit = int_len(n);
 
 		if (n < 0)
 		{
 			_putchar('-');
 			n = n * (-1);
+			count++;
 		}
 
 		num = n;
@@ -57,7 +59,7 @@ unsigned int _put_int(int n)
 			multiple = multiple / 10;
 		}
 
-		return (len_digit);
+		return (count + len_digit);
 	}
 	else
 	{

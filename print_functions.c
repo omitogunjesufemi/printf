@@ -67,7 +67,7 @@ unsigned int print_integer(va_list integer)
 
 /**
  * print_binary - Prints a binary from a va_list
- * @dec: A decimal number as va_list object
+ * @binary: A decimal number as va_list object
  * Return: size of bytes printed
  */
 unsigned int print_binary(va_list binary)
@@ -75,6 +75,20 @@ unsigned int print_binary(va_list binary)
 	unsigned int byte_size, num;
 
 	num = va_arg(binary, unsigned int);
-	byte_size = dec_to_binary_print(num);
+	byte_size = dec_to_binary_print(num, 2);
+	return (byte_size);
+}
+
+/**
+ * print_octal - prints an octal from a va_list
+ * @octal: A decimal number as va_list object
+ * Return: size of bytes printed
+ */
+unsigned int print_octal(va_list octal)
+{
+	unsigned int byte_size, num;
+
+	num = va_arg(octal, unsigned int);
+	byte_size = dec_to_binary_print(num, 8);
 	return (byte_size);
 }

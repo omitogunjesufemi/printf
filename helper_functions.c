@@ -67,12 +67,11 @@ unsigned int get_multiple(unsigned int num)
  */
 int get_remainder_count(unsigned int num)
 {
-	int remainder, count;
+	int count;
 
 	count = 0;
 	while (num != 0)
 	{
-		remainder = num % 2;
 		num = num / 2;
 		count++;
 	}

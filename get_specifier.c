@@ -16,10 +16,11 @@ print_function get_print_function(char format_string)
 		{"d", print_integer},
 		{"i", print_integer},
 		{"b", print_binary},
+		{"u", print_uinteger},
 		{"o", print_octal}
 	};
 
-	for (i = 0; i < 7; i++)
+	for (i = 0; i < 8; i++)
 	{
 		if (format_string - options[i].specifier[0] == 0)
 		{

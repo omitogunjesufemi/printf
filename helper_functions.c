@@ -42,6 +42,23 @@ unsigned int int_len(int digit)
 }
 
 /**
+ * uint_len - This returns the length of an unsigned integer
+ * @digit: integer to be checked
+ * Return: number of digit present in integer
+ */
+unsigned int uint_len(unsigned int digit)
+{
+	unsigned int result = 0;
+
+	while (digit != 0)
+	{
+		digit = digit / 10;
+		result++;
+	}
+	return (result);
+}
+
+/**
  * get_multiple - Gets the highest multiple of 10 which is a factor of @n
  * @num: A positive number
  * Return: 1 if @n is <= 10; a multiple of 10 otherwise

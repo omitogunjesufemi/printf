@@ -70,6 +70,41 @@ unsigned int _put_int(int n)
 	return (0);
 }
 
+
+/**
+ * _put_uint - Prints unsigned integer
+ * @n: integer
+ * Return: number of integers printed
+ */
+unsigned int _put_uint(unsigned int n)
+{
+	unsigned int len_digit, multiple, num, i, digit, count;
+
+	if (n > 9)
+	{
+		count = 0;
+		len_digit = uint_len(n);
+		num = n;
+		multiple = get_multiple(num);
+
+		for (i = 0; i < len_digit; i++)
+		{
+			digit = (num / multiple) % 10;
+			_putchar(digit + '0');
+			multiple = multiple / 10;
+		}
+
+		return (count + len_digit);
+	}
+	else
+	{
+		_putchar(n + '0');
+		return (1);
+	}
+
+	return (0);
+}
+
 /**
  * decimal_to_nbase_print - This converts a decimal number to binary, then prints
  * @num: decimal number

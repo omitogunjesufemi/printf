@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stdio.h>
+#include <limits.h>
 
 /**
  * struct specifier - Struct specifier
@@ -30,6 +31,13 @@ int check_for_some_chars(char c);
  * Return: number of digit present in integer
  */
 unsigned int int_len(int digit);
+
+/**
+ * uint_len - This returns the length of an unsigned integer
+ * @digit: integer to be checked
+ * Return: number of digit present in integer
+ */
+unsigned int uint_len(unsigned int digit);
 
 /**
  * get_remainder_count - Gets the count of remainder
@@ -83,6 +91,13 @@ unsigned int _puts(char *s);
 unsigned int _put_int(int n);
 
 /**
+ * _put_uint - Prints unsigned integer
+ * @n: integer
+ * Return: number of integers printed
+ */
+unsigned int _put_uint(unsigned int n);
+
+/**
  * decimal_to_nbase_print - This converts a decimal number to binary, then prints
  * @num: decimal number
  * Return: byte size printed
@@ -123,6 +138,13 @@ unsigned int print_integer(va_list integer);
  * Return: size of bytes printed
  */
 unsigned int print_binary(va_list binary);
+
+/**
+ * print_uinteger - Prints an unsigned integer from va_list
+ * @integer: va_list object
+ * Return: size of bytes printed
+ */
+unsigned int print_uinteger(va_list integer);
 
 /**
  * print_octal - Prints octal from unsigned int in va_list

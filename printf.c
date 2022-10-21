@@ -11,6 +11,8 @@ int _printf(const char *format, ...)
 	va_list print_obj;
 	unsigned int count, i, format_len;
 	char next;
+	char *flags;
+	int flag_count;
 
 	if (!format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
@@ -23,12 +25,36 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			/*This moves the pointer to the point exactly after %*/
+			flags = get_flags((char *) (format + i + 1));
+
+			if (flags)
+			{
+				flag_count = str_len(flags);
+				i = i + flag_count;
+				next = format[i + 1];
+				print_ptr = get_print_function(next);
+
+				if (print_ptr)
+				{
+					count = count + print_ptr(print_obj, flags);
+					i = i + 1;
+					continue;
+				}
+
+				_putchar(format[i]);
+				count++;
+			}
+		}
+
+		if (format[i] == '%')
+		{
 			next = format[i + 1];
 			print_ptr = get_print_function(next);
 
 			if (print_ptr)
 			{
-				count = count + print_ptr(print_obj);
+				count = count + print_ptr(print_obj, flags);
 				i = i + 1;
 				continue;
 			}
@@ -38,6 +64,7 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			count++;
 		}
+
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);

@@ -5,10 +5,11 @@
  * @character: va_list object
  * Return: size of bytes printed
  */
-unsigned int print_char(va_list character)
+unsigned int print_char(va_list character, char *flags)
 {
 	unsigned int byte_size;
 	char pointer = (char) va_arg(character, int);
+	(void) flags;
 
 	byte_size = _putchar(pointer);
 	return (byte_size);
@@ -19,11 +20,12 @@ unsigned int print_char(va_list character)
  * @string: va_list object
  * Return: size of bytes printed
  */
-unsigned int print_string(va_list string)
+unsigned int print_string(va_list string, char *flags)
 {
 	unsigned int byte_size;
 	char *pointer;
 
+	(void) flags;
 	pointer = va_arg(string, char *);
 
 	if (pointer == NULL)
@@ -41,11 +43,12 @@ unsigned int print_string(va_list string)
  * @character: va_list object
  * Return: size of bytes printed
  */
-unsigned int print_percent(va_list character)
+unsigned int print_percent(va_list character, char *flags)
 {
 	unsigned int byte_size;
 
 	(void) character;
+	(void) flags;
 	byte_size = _putchar('%');
 	return (byte_size);
 }
@@ -55,11 +58,12 @@ unsigned int print_percent(va_list character)
  * @integer: va_list object
  * Return: size of bytes printed
  */
-unsigned int print_integer(va_list integer)
+unsigned int print_integer(va_list integer, char *flags)
 {
 	unsigned int byte_size;
 	int num;
 
+	(void) flags;
 	num = va_arg(integer, int);
 	byte_size = _put_int(num);
 	return (byte_size);
@@ -70,10 +74,11 @@ unsigned int print_integer(va_list integer)
  * @binary: A decimal number as va_list object
  * Return: size of bytes printed
  */
-unsigned int print_binary(va_list binary)
+unsigned int print_binary(va_list binary, char *flags)
 {
 	unsigned int byte_size, num;
 
+	(void) flags;
 	num = va_arg(binary, unsigned int);
 	byte_size = decimal_to_nbase_print(num, 2, 0);
 	return (byte_size);
@@ -84,11 +89,12 @@ unsigned int print_binary(va_list binary)
  * @integer: va_list object
  * Return: size of bytes printed
  */
-unsigned int print_uinteger(va_list integer)
+unsigned int print_uinteger(va_list integer, char *flags)
 {
 	unsigned int byte_size;
 	unsigned int num;
 
+	(void) flags;
 	num = va_arg(integer, int);
 
 	byte_size = _put_uint(num);
@@ -100,10 +106,11 @@ unsigned int print_uinteger(va_list integer)
  * @octal: A decimal number as va_list object
  * Return: size of bytes printed
  */
-unsigned int print_octal(va_list octal)
+unsigned int print_octal(va_list octal, char *flags)
 {
 	unsigned int byte_size, num;
 
+	(void) flags;
 	num = va_arg(octal, unsigned int);
 	byte_size = decimal_to_nbase_print(num, 8, 0);
 	return (byte_size);
@@ -114,10 +121,11 @@ unsigned int print_octal(va_list octal)
  * @hex: A decimal number as va_list object
  * Return: size of bytes printed
  */
-unsigned int print_lowercase_hex(va_list hex)
+unsigned int print_lowercase_hex(va_list hex, char *flags)
 {
 	unsigned int byte_size, num;
 
+	(void) flags;
 	num = va_arg(hex, unsigned int);
 	byte_size = decimal_to_nbase_print(num, 16, 0);
 	return (byte_size);
@@ -128,10 +136,11 @@ unsigned int print_lowercase_hex(va_list hex)
  * @hex: A hexadecimal number as va_list object
  * Return: size of bytes printed
  */
-unsigned int print_uppercase_hex(va_list hex)
+unsigned int print_uppercase_hex(va_list hex, char *flags)
 {
 	unsigned int byte_size, num;
 
+	(void) flags;
 	num = va_arg(hex, unsigned int);
 	byte_size = decimal_to_nbase_print(num, 16, 1);
 	return (byte_size);
@@ -142,11 +151,12 @@ unsigned int print_uppercase_hex(va_list hex)
  * @special_character: the special character va_list object
  * Return: size of bytes printed
  */
-unsigned int print_special_char(va_list special_character)
+unsigned int print_special_char(va_list special_character, char *flags)
 {
 	unsigned int byte_size;
 	char *special_str;
 
+	(void) flags;
 	special_str = va_arg(special_character, char *);
 	byte_size = print_string_special_chars(special_str);
 	return (byte_size);
@@ -157,11 +167,12 @@ unsigned int print_special_char(va_list special_character)
  * @pointer: the pointer as a va_list object
  * Return: size of bytes printed
  */
-unsigned int print_pointer(va_list pointer)
+unsigned int print_pointer(va_list pointer, char *flags)
 {
 	unsigned int byte_size;
 	unsigned long int ptr;
 
+	(void) flags;
 	ptr = va_arg(pointer, unsigned long int);
 
 	if (!ptr)

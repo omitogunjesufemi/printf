@@ -54,7 +54,7 @@ int get_remainder_count(unsigned int num);
  * @num: the decimal number
  * Return: remainder count
  */
-int get_long_int_remainder_count(long int num);
+int get_long_int_remainder_count(unsigned long int num);
 
 /**
  * str_len - Gets length of a string
@@ -129,7 +129,7 @@ unsigned int decimal_to_nbase_print(unsigned int num, int nbase, int hex_flag);
  * @num: the long integer
  * Return: byte size printed
  */
-unsigned int long_hexadecimal_print(long int num);
+unsigned int long_hexadecimal_print(unsigned long int num);
 
 /**
  * print_char - Prints character
@@ -153,7 +153,7 @@ char get_remainder(unsigned int num, int nbase, int hex_flag);
  * @num: the long int
  * Return: char value of remainder
  */
-char long_hex_remainder(long int num);
+char long_hex_remainder(unsigned long int num);
 
 /**
  * print_string - prints the string from va_list

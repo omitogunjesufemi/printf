@@ -155,7 +155,7 @@ unsigned int decimal_to_nbase_print(unsigned int num, int nbase, int hex_flag)
  * @num: the long integer
  * Return: byte size printed
  */
-unsigned int long_hexadecimal_print(long int num)
+unsigned int long_hexadecimal_print(unsigned long int num)
 {
 	int remainder_count, i;
 	char *ptr_remainder;

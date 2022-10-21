@@ -149,3 +149,45 @@ unsigned int decimal_to_nbase_print(unsigned int num, int nbase, int hex_flag)
 
 	return (print_size);
 }
+
+/**
+ * long_hexadecimal_print - Prints the hexadecimal of a long int
+ * @num: the long integer
+ * Return: byte size printed
+ */
+unsigned int long_hexadecimal_print(long int num)
+{
+	int remainder_count, i;
+	char *ptr_remainder;
+	char remainder_char;
+	unsigned int print_size;
+
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
+	i = 0;
+	remainder_count = get_long_int_remainder_count(num);
+	ptr_remainder = malloc((1 + remainder_count) * sizeof(char));
+
+	if (ptr_remainder == NULL)
+		return (-1);
+
+	while (num != 0)
+	{
+		remainder_char = long_hex_remainder(num);
+		num = num / 16;
+
+		ptr_remainder[i] = remainder_char;
+		i++;
+	}
+
+	ptr_remainder[i] = '\0';
+	reverse_string(ptr_remainder);
+	print_size = _puts(ptr_remainder);
+	free(ptr_remainder);
+
+	return (print_size);
+}

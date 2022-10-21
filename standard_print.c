@@ -162,6 +162,7 @@ unsigned int long_hexadecimal_print(long int num)
 	char remainder_char;
 	unsigned int print_size;
 
+	print_size = 0;
 	if (num == 0)
 	{
 		_putchar('0');
@@ -186,9 +187,9 @@ unsigned int long_hexadecimal_print(long int num)
 
 	ptr_remainder[i] = '\0';
 	reverse_string(ptr_remainder);
-	print_size = _puts("0x");
-	print_size = _puts(ptr_remainder);
+	print_size += _puts("0x");
+	print_size += _puts(ptr_remainder);
 	free(ptr_remainder);
 
-	return (print_size);
+	return (print_size - 1); /* For the null pointers*/
 }

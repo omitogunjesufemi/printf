@@ -71,6 +71,20 @@ unsigned int str_len(char *s);
 void reverse_string(char *s);
 
 /**
+ * _isalpha - Checks if a character is a letter or not
+ * @c: The letter to be checked
+ * Return: 1 if true, 0 if false
+ */
+int _isalpha(char c);
+
+/**
+ * get_flags - Gets all the flags in a format specifier
+ * @str: The format specifier
+ * Return: A string containing the flags
+ */
+char *get_flags(char *str);
+
+/**
  * print_string_special_chars - Prints a string that contains
  * unprintable special chars
  * @str: The string to print

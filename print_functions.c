@@ -163,6 +163,13 @@ unsigned int print_pointer(va_list pointer)
 	long int ptr;
 
 	ptr = va_arg(pointer, long int);
+
+	if (!ptr)
+	{
+		byte_size = _puts("(nil)");
+		return (byte_size);
+	}
+
 	byte_size = long_hexadecimal_print(ptr);
 	return (byte_size);
 }

@@ -167,7 +167,7 @@ unsigned int print_pointer(va_list pointer)
 	if (!ptr)
 	{
 		byte_size = _puts("(nil)");
-		return (byte_size);
+		return (byte_size - 1);
 	}
 
 	byte_size = long_hexadecimal_print(ptr);

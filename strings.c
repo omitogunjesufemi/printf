@@ -19,9 +19,8 @@ unsigned int str_len(char *s)
 }
 
 /**
- * reverse_str - Reverses a string
+ * reverse_string - Reverses a string
  * @s: The string to reverse
- * Return: Nothing
  */
 void reverse_string(char *s)
 {

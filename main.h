@@ -47,6 +47,15 @@ unsigned int uint_len(unsigned int digit);
  */
 int get_remainder_count(unsigned int num);
 
+
+/**
+ * get_long_int_remainder_count - Gets the count of remainder
+ * for long int decimal to hexadecimal conversion
+ * @num: the decimal number
+ * Return: remainder count
+ */
+int get_long_int_remainder_count(long int num);
+
 /**
  * str_len - Gets length of a string
  * @s: string
@@ -116,6 +125,13 @@ unsigned int _put_uint(unsigned int n);
 unsigned int decimal_to_nbase_print(unsigned int num, int nbase, int hex_flag);
 
 /**
+ * long_hexadecimal_print - Prints the hexadecimal of a long int
+ * @num: the long integer
+ * Return: byte size printed
+ */
+unsigned int long_hexadecimal_print(long int num);
+
+/**
  * print_char - Prints character
  * @character: character
  * Return: number of bytes printed
@@ -131,6 +147,13 @@ unsigned int print_char(va_list character);
  * Return: char value of remainder
  */
 char get_remainder(unsigned int num, int nbase, int hex_flag);
+
+/**
+ * long_hex_remainder - Remainder for during long int to hexadecimal conversion
+ * @num: the long int
+ * Return: char value of remainder
+ */
+char long_hex_remainder(long int num);
 
 /**
  * print_string - prints the string from va_list
@@ -194,6 +217,13 @@ unsigned int print_uppercase_hex(va_list hex);
  * Return: size of bytes printed
  */
 unsigned int print_special_char(va_list special_character);
+
+/**
+ * print-pointer - Prints the value of a pointer variable
+ * @pointer - va_list object
+ * Return: size of bytes printed
+ */
+unsigned int print_pointer(va_list pointer);
 
 typedef unsigned int(*print_function)(va_list);
 print_function get_print_function(char format_string);

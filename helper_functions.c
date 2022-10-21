@@ -97,10 +97,32 @@ int get_remainder_count(unsigned int num)
 }
 
 /**
+ * get_long_int_remainder_count - Gets the count of remainder
+ * for long int decimal to hexadecimal conversion
+ * @num: the decimal number
+ * Return: remainder count
+ */
+
+int get_long_int_remainder_count(long int num)
+{
+	int count;
+
+	count = 0;
+	while (num != 0)
+	{
+		num = num / 2;
+		count++;
+	}
+
+	return (count);
+}
+
+
+/**
  * get_remainder - divides numbers and returns the remainder as char
  * @num: The number to be divided
  * @nbase: The base to used in the division
- * hex_flag: 0 Default, 1 for UPPERCASE hex values
+ * @hex_flag: 0 Default, 1 for UPPERCASE hex values
  *
  * Return: The char value of the remainder
  */
@@ -123,6 +145,29 @@ char get_remainder(unsigned int num, int nbase, int hex_flag)
 
 	return (remainder_char);
 }
+
+/**
+ * long_hex_remainder - Remainder for during long int to hexadecimal conversion
+ * @num: the long int
+ * Return: char value of remainder
+ */
+char long_hex_remainder(long int num)
+{
+	int remainder;
+	char remainder_char;
+
+	remainder = num % 16;
+
+	if (remainder < 10)
+		remainder_char = remainder + 48;
+	else
+	{
+		remainder_char = remainder + 87;
+	}
+
+	return (remainder_char);
+}
+
 
 /**
  * print_string_special_chars - Prints a string that contains unprintable

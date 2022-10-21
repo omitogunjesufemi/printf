@@ -186,6 +186,7 @@ unsigned int long_hexadecimal_print(long int num)
 
 	ptr_remainder[i] = '\0';
 	reverse_string(ptr_remainder);
+	print_size = _puts("0x");
 	print_size = _puts(ptr_remainder);
 	free(ptr_remainder);
 

@@ -218,6 +218,13 @@ unsigned int print_uppercase_hex(va_list hex);
  */
 unsigned int print_special_char(va_list special_character);
 
+/**
+ * print-pointer - Prints the value of a pointer variable
+ * @pointer - va_list object
+ * Return: size of bytes printed
+ */
+unsigned int print_pointer(va_list pointer);
+
 typedef unsigned int(*print_function)(va_list);
 print_function get_print_function(char format_string);
 

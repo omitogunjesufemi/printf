@@ -151,3 +151,18 @@ unsigned int print_special_char(va_list special_character)
 	byte_size = print_string_special_chars(special_str);
 	return (byte_size);
 }
+
+/**
+ * print_pointer - Prints the value of a pointer
+ * @pointer: the pointer as a va_list object
+ * Return: size of bytes printed
+ */
+unsigned int print_pointer(va_list pointer)
+{
+	unsigned int byte_size;
+	long int ptr;
+
+	ptr = va_arg(pointer, long int);
+	byte_size = long_hexadecimal_print(ptr);
+	return (byte_size);
+}

@@ -191,5 +191,5 @@ unsigned int long_hexadecimal_print(long int num)
 	print_size += _puts(ptr_remainder);
 	free(ptr_remainder);
 
-	return (print_size - 1); /* For the null pointers*/
+	return (print_size); /* For the null pointers*/
 }

@@ -103,7 +103,7 @@ int get_remainder_count(unsigned int num)
  * Return: remainder count
  */
 
-int get_long_int_remainder_count(long int num)
+int get_long_int_remainder_count(unsigned long int num)
 {
 	int count;
 
@@ -151,7 +151,7 @@ char get_remainder(unsigned int num, int nbase, int hex_flag)
  * @num: the long int
  * Return: char value of remainder
  */
-char long_hex_remainder(long int num)
+char long_hex_remainder(unsigned long int num)
 {
 	int remainder;
 	char remainder_char;

@@ -160,9 +160,9 @@ unsigned int print_special_char(va_list special_character)
 unsigned int print_pointer(va_list pointer)
 {
 	unsigned int byte_size;
-	long int ptr;
+	unsigned long int ptr;
 
-	ptr = va_arg(pointer, long int);
+	ptr = va_arg(pointer, unsigned long int);
 
 	if (!ptr)
 	{

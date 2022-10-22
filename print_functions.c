@@ -61,11 +61,30 @@ unsigned int print_percent(va_list character, char *flags)
 unsigned int print_integer(va_list integer, char *flags)
 {
 	unsigned int byte_size;
-	int num;
+	int num, i;
 
-	(void) flags;
 	num = va_arg(integer, int);
-	byte_size = _put_int(num);
+	byte_size = 0;
+
+	if (flags)
+	{
+		for (i = 0; flags[i] != '\0'; i++)
+		{
+			if (flags[i] == '+')
+			{
+				if (num >= 0)
+					byte_size += _putchar('+');
+			}
+
+			else if (flags[i] == ' ')
+			{
+				if (byte_size == 0 && num >= 0)
+					byte_size += _putchar(' ');
+			}
+		}
+	}
+
+	byte_size += _put_int(num);
 	return (byte_size);
 }
 
@@ -109,8 +128,9 @@ unsigned int print_uinteger(va_list integer, char *flags)
 unsigned int print_octal(va_list octal, char *flags)
 {
 	unsigned int byte_size, num;
+	int i;
 
-	(void) flags;
+	byte_size = 0;
 	num = va_arg(octal, unsigned int);
 	byte_size = decimal_to_nbase_print(num, 8, 0);
 	return (byte_size);

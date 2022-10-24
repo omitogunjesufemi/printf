@@ -43,3 +43,17 @@ void reverse_string(char *s)
 		i++;
 	}
 }
+
+/**
+ * _isalpha - Checks if a character is a letter
+ * @c: The letter to be checked
+ *
+ * Return: 1 if true, 0 if false
+*/
+int _isalpha(char c)
+{
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <=122))
+		return (1);
+	else
+		return (0);
+}

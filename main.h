@@ -15,7 +15,7 @@
 typedef struct specifier
 {
 	char *specifier;
-	unsigned int (*print)(va_list);
+	unsigned int (*print)(va_list, char *);
 } conversion_specifier;
 
 /**
@@ -69,6 +69,20 @@ unsigned int str_len(char *s);
  * Return: void
  */
 void reverse_string(char *s);
+
+/**
+ * _isalpha - Checks if a character is a letter or not
+ * @c: The letter to be checked
+ * Return: 1 if true, 0 if false
+ */
+int _isalpha(char c);
+
+/**
+ * get_flags - Gets all the flags in a format specifier
+ * @str: The format specifier
+ * Return: A string containing the flags
+ */
+char *get_flags(char *str);
 
 /**
  * print_string_special_chars - Prints a string that contains
@@ -136,7 +150,7 @@ unsigned int long_hexadecimal_print(unsigned long int num);
  * @character: character
  * Return: number of bytes printed
  */
-unsigned int print_char(va_list character);
+unsigned int print_char(va_list character, char *flags);
 
 /**
  * get_remainder - gets the remainder of a base division
@@ -160,72 +174,72 @@ char long_hex_remainder(unsigned long int num);
  * @string: va_list object
  * Return: size of bytes printed
  */
-unsigned int print_string(va_list string);
+unsigned int print_string(va_list string, char *flags);
 
 /**
  * print_percent - prints percent from va_list
  * @character: va_list object
  * Return: size of bytes printed
  */
-unsigned int print_percent(va_list __attribute__((unused)) character);
+unsigned int print_percent(va_list character, char *flags);
 
 /**
  * print_integer - prints integer from va_list
  * @integer: va_list onject
  * Return: size of bytes printed
  */
-unsigned int print_integer(va_list integer);
+unsigned int print_integer(va_list integer, char *flags);
 
 /**
  * print_binary - Prints binary from unsigned int in va_list
  * @binary: va_list object holding unsigned int
  * Return: size of bytes printed
  */
-unsigned int print_binary(va_list binary);
+unsigned int print_binary(va_list binary, char *flags);
 
 /**
  * print_uinteger - Prints an unsigned integer from va_list
  * @integer: va_list object
  * Return: size of bytes printed
  */
-unsigned int print_uinteger(va_list integer);
+unsigned int print_uinteger(va_list integer, char *flags);
 
 /**
  * print_octal - Prints octal from unsigned int in va_list
  * @octal: va_list object holding unsigned int
  * Return: size of bytes printed
  */
-unsigned int print_octal(va_list octal);
+unsigned int print_octal(va_list octal, char *flags);
 
 /**
  * print_lowercase_hex - Prints a lowercase hex from int in va_list
  * @hex: va_list object holding unsigned int
  * Return: size of bytes printed
  */
-unsigned int print_lowercase_hex(va_list hex);
+unsigned int print_lowercase_hex(va_list hex, char *flags);
 
 /**
  * print_uppercase_hex - Prints a lowercase hex from int in va_list
  * @hex: va_list object holding unsigned int
  * Return: size of bytes printed
  */
-unsigned int print_uppercase_hex(va_list hex);
+unsigned int print_uppercase_hex(va_list hex, char *flags);
 
 /**
  * print_special_char - Prints the hexadecimal for a special character
  * @special_character: the special character va_list object
  * Return: size of bytes printed
  */
-unsigned int print_special_char(va_list special_character);
+unsigned int print_special_char(va_list special_character, char *flags);
 
 /**
  * print-pointer - Prints the value of a pointer variable
  * @pointer - va_list object
  * Return: size of bytes printed
  */
-unsigned int print_pointer(va_list pointer);
+unsigned int print_pointer(va_list pointer, char *flags);
 
-typedef unsigned int(*print_function)(va_list);
+typedef unsigned int(*print_function)(va_list, char *);
 print_function get_print_function(char format_string);
 
 /**

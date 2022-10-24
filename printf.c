@@ -33,15 +33,21 @@ int _printf(const char *format, ...)
 				flag_count = str_len(flags);
 				i = i + flag_count;
 				next = format[i + 1];
+				
+				/*If the next item is the null byte*/
+				if (next == '\0')
+					return (-1);
+
 				print_ptr = get_print_function(next);
 
 				if (print_ptr)
-				{
+				{ 
 					count = count + print_ptr(print_obj, flags);
 					i = i + 1;
 					continue;
 				}
 
+				/*If no valid printer function, go back and just print the character*/
 				i = i - flag_count;
 				_putchar(format[i]);
 				count++;
@@ -52,6 +58,10 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			next = format[i + 1];
+
+			if (next == '\0')
+				return (-1);
+
 			print_ptr = get_print_function(next);
 
 			if (print_ptr)

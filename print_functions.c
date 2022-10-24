@@ -156,6 +156,10 @@ unsigned int print_lowercase_hex(va_list hex, char *flags)
 	int i;
 
 	byte_size = 0;
+	num = va_arg(hex, unsigned int);
+
+	if (num == 0)
+		return (_putchar(48));
 
 	if (flags)
 	{
@@ -166,7 +170,6 @@ unsigned int print_lowercase_hex(va_list hex, char *flags)
 		}
 	}
 	
-	num = va_arg(hex, unsigned int);
 	byte_size += decimal_to_nbase_print(num, 16, 0);
 	return (byte_size);
 }
@@ -182,6 +185,10 @@ unsigned int print_uppercase_hex(va_list hex, char *flags)
 	int i;
 
 	byte_size = 0;
+	num = va_arg(hex, unsigned int);
+
+	if (num == 0)
+		return (_putchar(48));
 
 	if (flags)
 	{
@@ -192,7 +199,6 @@ unsigned int print_uppercase_hex(va_list hex, char *flags)
 		}
 	}
 	
-	num = va_arg(hex, unsigned int);
 	byte_size += decimal_to_nbase_print(num, 16, 1);
 	return (byte_size);
 }

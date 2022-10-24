@@ -198,7 +198,7 @@ unsigned int print_uppercase_hex(va_list hex, char *flags)
 		for (i = 0; flags[i] != '\0'; i++)
 		{
 			if (flags[i] == 35) /*35 is ascii '#'*/
-				byte_size += _puts("0x");
+				byte_size += _puts("0X");
 		}
 	}
 	

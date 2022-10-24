@@ -131,8 +131,17 @@ unsigned int print_octal(va_list octal, char *flags)
 	int i;
 
 	byte_size = 0;
+
+	if (flags)
+	{
+		for (i = 0; flags[i] != '\0'; i++)
+		{
+			if (flags[i] == 35)
+				byte_size += _putchar(48);
+		}
+	}
 	num = va_arg(octal, unsigned int);
-	byte_size = decimal_to_nbase_print(num, 8, 0);
+	byte_size += decimal_to_nbase_print(num, 8, 0);
 	return (byte_size);
 }
 
@@ -144,10 +153,21 @@ unsigned int print_octal(va_list octal, char *flags)
 unsigned int print_lowercase_hex(va_list hex, char *flags)
 {
 	unsigned int byte_size, num;
+	int i;
 
-	(void) flags;
+	byte_size = 0;
+
+	if (flags)
+	{
+		for (i = 0; flags[i] != '\0'; i++)
+		{
+			if (flags[i] == 35) /*35 is ascii '#'*/
+				byte_size += _puts("0x");
+		}
+	}
+	
 	num = va_arg(hex, unsigned int);
-	byte_size = decimal_to_nbase_print(num, 16, 0);
+	byte_size += decimal_to_nbase_print(num, 16, 0);
 	return (byte_size);
 }
 
@@ -159,10 +179,21 @@ unsigned int print_lowercase_hex(va_list hex, char *flags)
 unsigned int print_uppercase_hex(va_list hex, char *flags)
 {
 	unsigned int byte_size, num;
+	int i;
 
-	(void) flags;
+	byte_size = 0;
+
+	if (flags)
+	{
+		for (i = 0; flags[i] != '\0'; i++)
+		{
+			if (flags[i] == 35) /*35 is ascii '#'*/
+				byte_size += _puts("0x");
+		}
+	}
+	
 	num = va_arg(hex, unsigned int);
-	byte_size = decimal_to_nbase_print(num, 16, 1);
+	byte_size += decimal_to_nbase_print(num, 16, 1);
 	return (byte_size);
 }
 

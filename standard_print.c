@@ -146,7 +146,6 @@ unsigned int decimal_to_nbase_print(unsigned int num, int nbase, int hex_flag)
 	reverse_string(ptr_remainder);
 	print_size = _puts(ptr_remainder);
 	free(ptr_remainder);
-
 	return (print_size);
 }
 

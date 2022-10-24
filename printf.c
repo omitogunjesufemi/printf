@@ -42,8 +42,10 @@ int _printf(const char *format, ...)
 					continue;
 				}
 
+				i = i - flag_count;
 				_putchar(format[i]);
 				count++;
+				continue;
 			}
 		}
 

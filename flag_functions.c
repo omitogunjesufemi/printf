@@ -22,6 +22,9 @@ char *get_flags(char *flagPtr)
 	if (i == 0)
 		return (NULL);
 
+	if (flagPtr[i] == '%')
+		return (NULL);
+
 	/*If flags are found, allocate memory and insert flags*/
 	flagStr = malloc(sizeof(char) * (i + 1));
 

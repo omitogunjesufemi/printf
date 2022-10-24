@@ -8,7 +8,7 @@
 int check_for_some_chars(char c)
 {
 	int i;
-	int some_chars[] = {32, 35, 42, 43, 45};
+	int some_chars[] = {35, 42, 43, 45};
 
 	for (i = 0; i < 5; i++)
 	{

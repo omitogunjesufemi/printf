@@ -131,6 +131,10 @@ unsigned int print_octal(va_list octal, char *flags)
 	int i;
 
 	byte_size = 0;
+	num = va_arg(octal, unsigned int);
+
+	if (num == 0)
+		return (_putchar(48));
 
 	if (flags)
 	{
@@ -140,7 +144,6 @@ unsigned int print_octal(va_list octal, char *flags)
 				byte_size += _putchar(48);
 		}
 	}
-	num = va_arg(octal, unsigned int);
 	byte_size += decimal_to_nbase_print(num, 8, 0);
 	return (byte_size);
 }

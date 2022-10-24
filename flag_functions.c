@@ -13,16 +13,13 @@ char *get_flags(char *flagPtr)
 
 	/*Count the flags*/
 	i = 0;
-	while (!_isalpha(flagPtr[i]) && flagPtr[i] != '%')
+	while (!_isalpha(flagPtr[i]) && flagPtr[i] != '%' && flagPtr[i] != '\0')
 	{
 		i++;
 	}
 
 	/*If no flag is found, return*/
 	if (i == 0)
-		return (NULL);
-
-	if (flagPtr[i] == '%')
 		return (NULL);
 
 	/*If flags are found, allocate memory and insert flags*/
